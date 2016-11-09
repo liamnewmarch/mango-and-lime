@@ -1,0 +1,90 @@
+:root {
+  --apple: #9c973c;
+  --lime: #d7bd1e;
+  --mango: #fdc636;
+  --banana: #e49b00;
+  --orange: #e37b02;
+  --pomegranate: #d55025;
+  --text: #144;
+  --white: #fff;
+  --half-white: rgba(255, 255, 255, .5);
+}
+
+html {
+  background: var(--mango);
+  color: var(--text);
+  font: 16px sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 64rem;
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  /*text-align: center;*/
+}
+
+h1 {
+  color: var(--text);
+  margin: 10rem 0 2rem 2rem;
+}
+
+h2 {
+  margin: 0 0 2rem;
+}
+
+.card {
+  background: var(--half-white);
+  border-radius: .3rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+button-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 40rem) {
+  button-group {
+    flex-direction: row;
+  }
+}
+
+button-group button {
+  border: 0;
+  border-radius: .3rem;
+  color: var(--white);
+  flex: 0 0 auto;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+}
+
+button-group button[value="good"] {
+  background: var(--apple);
+}
+
+button-group button[value="ok"] {
+  background: var(--banana);
+}
+
+button-group button[value="bad"] {
+  background: var(--pomegranate);
+}
+
+button-group[selected] button {
+  opacity: .5;
+}
+
+button-group[selected="good"] button[value="good"],
+button-group[selected="ok"] button[value="ok"],
+button-group[selected="bad"] button[value="bad"] {
+  opacity: 1;
+}
